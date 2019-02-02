@@ -42,21 +42,31 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      sounds: Object.keys(Sounds)
+      sounds: Object.keys(Sounds),
+      buttons: []
     }
     this.playSound = this.playSound.bind(this);
   }
 
   playSound(eventObj) {
     //code to be run when click event is fired goes below this line!
+    console.log(eventObj.currentTarget.id);
+    const id = eventObj.currentTarget.id;
+    const audio = Sounds[id];
+    audio.currentTime = 0;
+    audio.play()
 
   }
 
   render(){
+    const buttons = this.state.sounds.map(sound => (
+      <Button sound = {sound} playSound={this.playSound} key= {sound}/>
+    ));
 
     return (
       <div className='button-container'>
-      {/* Components that need to be returned from App go below here ! */}
+      {buttons}
+
       </div>
     );
   }
