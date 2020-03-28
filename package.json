@@ -10,8 +10,11 @@
   "author": "Phillip Troutman",
   "license": "ISC",
   "dependencies": {
+    "acorn": "^6.4.1",
+    "minimist": "^1.2.5",
     "react": "^16.6.3",
-    "react-dom": "^16.6.3"
+    "react-dom": "^16.6.3",
+    "serialize-javascript": "^3.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.2.0",
